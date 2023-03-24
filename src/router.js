@@ -16,6 +16,7 @@ import ZTextPost from "./pages/ZTextPage.vue";
 import ZAllText from "./pages/ZAllTextPage.vue";
 import ZTextDetail from "./pages/ZTextDetailPage.vue";
 import ZTextEdit from "./pages/ZTextEditPage.vue";
+import ZUser from "./pages/ZUserPage.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomePage, meta: { isPublic: true } },
@@ -25,6 +26,8 @@ const routes = [
   { path: "/ZAllText", name: "zalltext", component: ZAllText, meta: { isPublic: true } },
   { path: "/ztext/edit/:id", name: "ztextEdit", component: ZTextEdit, meta: { isPublic: true } },
   { path: "/ztext/:id", name: "ztext", component: ZTextDetail, meta: { isPublic: true } },
+  // { path: "/ZUser", name: "zuser", component: ZUser, meta: { isPublic: true } },
+  { path: "/ZUser/:id", name: "zuser", component: ZUser, meta: { isPublic: true } },
   { path: "/axios", name: "axios", component: AxiosPage },
   {
     path: "/login",

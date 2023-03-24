@@ -2,6 +2,8 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "./components/HelloWorld.vue";
+import { ref } from "vue";
+const userId = "me";//ref(localStorage.getItem("user_id") || "me");
 </script>
 
 <template>
@@ -31,6 +33,8 @@ import HelloWorld from "./components/HelloWorld.vue";
         <router-link to="/ZText/post">ZTextPost</router-link>
         |
         <router-link to="/ZAllText">ZAllText</router-link>
+        |
+        <router-link  v-bind:to="{name: 'zuser', params: {id: userId }}">ZUser</router-link>
       </header>
 
       <router-view />

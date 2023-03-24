@@ -45,8 +45,8 @@
     },
   
     methods: {
-      async loadText() {
-        // APIからtextの詳細を取得
+          async loadText() {
+              // APIからtextの詳細を取得
               const response = await fetch(`/api/texts/${this.textId}`);
               const data = await response.json();
               this.title = data.title;
@@ -68,24 +68,32 @@
               headers: {
                 "Content-Type": "application/json"
               },
-            body: JSON.stringify({
+              body: JSON.stringify({
                 text_id: this.textId,
                 user_id: this.userId
               })
             });
-            const response2 = await fetch(`/api/texts/${this.textId}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json"
-              },
-            body: JSON.stringify({
-                good_count: this.goodCount + 1
-              })
-            });
-            this.liked = true;
-            const response3 = await fetch(`/api/texts/${this.textId}`);
-            const data = await response3.json();
-            this.goodCount = data.good_count;
+
+            if (response.ok) {
+              // リクエストが成功した場合の処理
+              const response2 = await fetch(`/api/texts/${this.textId}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                  good_count: this.goodCount + 1
+                })
+              });
+              this.liked = true;
+              const response3 = await fetch(`/api/texts/${this.textId}`);
+              const data = await response3.json();
+              this.goodCount = data.good_count;
+            } else {
+              // エラーが発生した場合の処理
+              this.liked = true;
+              console.log("いいね！の送信に失敗しました。");
+            }
           },
 
           async unlikeText() {
@@ -95,24 +103,32 @@
               headers: {
                 "Content-Type": "application/json"
               },
-            body: JSON.stringify({
+              body: JSON.stringify({
                 text_id: this.textId,
                 user_id: this.userId
               })
             });
-            const response2 = await fetch(`/api/texts/${this.textId}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json"
-              },
-            body: JSON.stringify({
-                good_count: this.goodCount - 1
-              })
-            });
-            this.liked = false;
-            const response3 = await fetch(`/api/texts/${this.textId}`);
-            const data = await response3.json();
-            this.goodCount = data.good_count;
+
+            if (response.ok) {
+              // リクエストが成功した場合の処理
+              const response2 = await fetch(`/api/texts/${this.textId}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                  good_count: this.goodCount - 1
+                })
+              });
+              this.liked = false;
+              const response3 = await fetch(`/api/texts/${this.textId}`);
+              const data = await response3.json();
+              this.goodCount = data.good_count;
+            } else {
+              // エラーが発生した場合の処理
+              this.liked = false;
+              console.log("いいね！の解除に失敗しました。");
+            }
           },
 
           async editText() {
@@ -127,7 +143,22 @@
           formatDate (dateStr) {
                 const date = new Date(dateStr)
                 return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}/${(date.getHours()<10?'0':'') + date.getHours()}:${(date.getMinutes()<10?'0':'') + date.getMinutes()}:${(date.getSeconds()<10?'0':'') + date.getSeconds()}`
-            }
+          },
+          async loadLike() {
+            // いいね！を解除
+            const response = await fetch(`/api/like/check`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                text_id: this.textId,
+                user_id: this.userId
+              })
+            });
+            const data = await response.json();
+            this.liked = data.check;
+          }
       },
         
       mounted() {
@@ -137,6 +168,7 @@
           this.userId = localStorage.getItem("user_id");
           this.loggedIn = true;
         }
+        this.loadLike();
       }
   };
     </script>
