@@ -131,126 +131,61 @@
     }
   }
   </script>
-  
+
 <style>
 .all {
-  max-width: 800px;
+  width: 60vw;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 20px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  font-size: 16px;
 }
 
 th {
-  font-weight: bold;
-  background-color: #f7f7f7;
-  text-align: left;
-  padding: 10px;
-  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
 }
 
-th button {
-  background-color: transparent;
-  border: none;
-  font-weight: normal;
-  font-size: 1rem;
-  color: #555;
-  cursor: pointer;
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
-th button:hover {
-  text-decoration: underline;
+tbody tr:hover {
+  background-color: #ddd;
 }
 
-td {
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  vertical-align: middle;
-  font-size: 1.2rem;
+tbody tr:hover td {
+  color: #333;
 }
 
-tr:hover {
-  background-color: #f7f7f7;
+.table1, .table2 {
+  display: block;
+  overflow-x: auto;
 }
 
-.noTopTr td {
+.noTopTr, .noTopTr2 {
   border-top: none;
 }
 
-.table1 {
-  margin-bottom: 60px;
+.topTr, .topTr2 {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
 }
 
-.topTr th:first-child,
-.noTopTr td:first-child {
-  width: 35%;
-}
-
-.topTr th:nth-child(2),
-.noTopTr td:nth-child(2) {
-  width: 15%;
-}
-
-.topTr th:nth-child(3),
-.noTopTr td:nth-child(3) {
-  width: 20%;
-}
-
-.topTr th:nth-child(4),
-.noTopTr td:nth-child(4) {
-  width: 10%;
-}
-
-.topTr th:nth-child(5),
-.noTopTr td:nth-child(5) {
-  width: 20%;
-}
-
-.table2 {
-  margin-bottom: 60px;
-}
-
-.topTr2 th:first-child,
-.noTopTr2 td:first-child {
-  width: 35%;
-}
-
-.topTr2 th:nth-child(2),
-.noTopTr2 td:nth-child(2) {
-  width: 15%;
-}
-
-.topTr2 th:nth-child(3),
-.noTopTr2 td:nth-child(3) {
-  width: 20%;
-}
-
-.topTr2 th:nth-child(4),
-.noTopTr2 td:nth-child(4) {
-  width: 10%;
-}
-
-.topTr2 th:nth-child(5),
-.noTopTr2 td:nth-child(5) {
-  width: 20%;
+@media only screen and (max-width: 600px) {
+  th, td {
+    font-size: 14px;
+  }
 }
 </style>

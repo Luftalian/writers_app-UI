@@ -48,42 +48,40 @@ const userName = ref(localStorage.getItem("name"));
 
 <style module>
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  background-color: #1da1f2;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #333;
   color: #fff;
 }
 
-.home {
-  color: #fff;
-  font-weight: bold;
-}
-
+.home,
 .zlogin,
 .ztextpost,
 .zalltext,
 .zuser {
   color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
   font-weight: bold;
 }
 
-.zlogin:hover,
-.ztextpost:hover,
-.zalltext:hover,
 .zuser:hover {
   text-decoration: underline;
 }
 
 .username {
-  font-size: 14px;
-  margin-top: 8px;
-  color: #fff;
+  margin-left: 1rem;
+}
+
+.routerView {
+  flex: 1;
 }
 </style>
