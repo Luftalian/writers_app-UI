@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "http://localhost:8080",
+        target: "localhost:8080", //"https://luftalian.trap.show/writersapp/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/'),
       }

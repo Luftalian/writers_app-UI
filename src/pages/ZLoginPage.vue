@@ -36,7 +36,7 @@ onMounted(() => {
   <div class="login">
     <h1>This is a login page</h1>
     <div class="inputText">
-      <input type="text" v-model="name" />
+      <input type="text" v-model="name" placeholder="User Name"/>
     </div>
     <div class="button">
       <button @click="login" class="loginButton">login</button>

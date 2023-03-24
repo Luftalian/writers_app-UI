@@ -20,37 +20,12 @@ import ZUser from "./pages/ZUserPage.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomePage, meta: { isPublic: true } },
-  // { path: "/signup", name: "signup", component: Signup, meta: { isPublic: true } },
   { path: "/zlogin", name: "zlogin", component: ZLogin, meta: { isPublic: true } },
   { path: "/ZText/post", name: "ztextPost", component: ZTextPost},
   { path: "/ZAllText", name: "zalltext", component: ZAllText, meta: { isPublic: true } },
   { path: "/ztext/edit/:id", name: "ztextEdit", component: ZTextEdit},
   { path: "/ztext/:id", name: "ztext", component: ZTextDetail, meta: { isPublic: true } },
   { path: "/ZUser/:id", name: "zuser", component: ZUser},
-  // { path: "/axios", name: "axios", component: AxiosPage },
-  // {
-  //   path: "/login",
-  //   name: "login",
-  //   component: LoginPage,
-  //   meta: { isPublic: true },
-  // },
-  // {
-  //   path: "/city/:cityName",
-  //   name: "cityName",
-  //   component: CityPage,
-  //   props: true,
-  // },
-  // { path: "/allcountry", name: "allcountry", component: CountryPage },
-  // {
-  //   path: "/country/:countryCode",
-  //   name: "countryName",
-  //   component: CountryNamePage,
-  //   props: true,
-  // },
-  // { path: "/logout", name: "logout", component: LogoutPage },
-  // { path: "/write", name: "write", component: WritePage },
-  // { path: "/show", name: "show", component: ShowPage },
-  // { path: "/:path(.*)", component: NotFound, meta: { isPublic: true } },
 ];
 
 const router = createRouter({
