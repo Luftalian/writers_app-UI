@@ -35,16 +35,100 @@ onMounted(() => {
 <template>
   <div class="login">
     <h1>This is a login page</h1>
-    <div>
+    <div class="inputText">
       <input type="text" v-model="name" />
     </div>
-    <div>
-      <button @click="login">login</button>
-      <button v-if="userId" @click="logout">logout</button>
+    <div class="button">
+      <button @click="login" class="loginButton">login</button>
+      <button v-if="userId" @click="logout" class="logoutButton">logout</button>
     </div>
-    <div v-if="userId">
+    <div v-if="userId" class="UserDiv">
       <p>User name: {{ name }}</p>
       <p>User ID: {{ userId }}</p>
     </div>
   </div>
 </template>
+
+<style>
+  /* ページ全体の背景 */
+  body {
+    background-color: #F5F5F5;
+  }
+
+  /* ログインページの背景と幅の設定 */
+  .login {
+    background-color: #FFFFFF;
+    margin: 100px auto;
+    padding: 30px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  /* ログインフォームの入力欄のスタイル */
+  .inputText {
+    margin: 30px auto;
+    width: 80%;
+    text-align: left;
+  }
+
+  .inputText input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #808080;
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .inputText input:focus {
+    border-bottom: 2px solid #0057D9;
+    outline: none;
+  }
+
+  /* ログインフォームのボタンスタイル */
+  .button {
+    margin: 30px auto;
+    width: 80%;
+  }
+
+  .button button {
+    background-color: #0057D9;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .button button:hover {
+    background-color: #274B8B;
+  }
+
+  /* ログアウトボタンのスタイル */
+  .logoutButton {
+    background-color: #F44336;
+  }
+
+  .logoutButton:hover {
+    background-color: #D32F2F;
+  }
+
+  /* ユーザー情報のスタイル */
+  .UserDiv {
+    margin-top: 50px;
+  }
+
+  .UserDiv p {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .UserDiv p:first-child {
+    margin-top: 0px;
+  }
+
+</style>

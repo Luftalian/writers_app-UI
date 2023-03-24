@@ -1,15 +1,15 @@
 <template>
-    <div>
+    <div class="all">
       <h1>記事一覧</h1>
-      <div>
-        <select v-model="selectedTag" @change="getTaggedTexts">
-          <option value="">全てのタグ</option>
-          <option v-for="tag in tags" :key="tag.tag_name" :value="tag.tag_name">{{ tag.tag_name }}</option>
+      <div class="tags">
+        <select v-model="selectedTag" @change="getTaggedTexts" class="tagsSelect">
+          <option value="" class="option">全てのタグ</option>
+          <option v-for="tag in tags" :key="tag.tag_name" :value="tag.tag_name" class="optionTags">{{ tag.tag_name }}</option>
         </select>
       </div>
-      <table>
-        <thead>
-          <tr>
+      <table class="table">
+        <thead class="thead">
+          <tr class="tr">
             <th><button @click="sort('title')">タイトル</button></th>
             <th><button @click="sort('user_name')">作成者</button></th>
             <th><button @click="sort('created_at')">作成日時</button></th>
@@ -17,8 +17,8 @@
             <th>本文（先頭20文字）</th>
           </tr>
         </thead>
-        <tbody>
-          <tr v-for="text in texts" :key="text.text_id" @click="showTextDetails(text.text_id)">
+        <tbody classs="tbody">
+          <tr v-for="text in texts" :key="text.text_id" @click="showTextDetails(text.text_id)" class="text">
             <td>{{ text.title }}</td>
             <td>{{ text.user_name }}</td>
             <td>{{ formatDate(text.created_at) }}</td>
@@ -103,3 +103,120 @@ import axios from 'axios'
     }
 }
 </script>
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  .all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .tags {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .tagsSelect {
+    font-size: 18px;
+    padding: 8px 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .option {
+    font-weight: bold;
+  }
+  
+  .optionTags {
+    font-weight: normal;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+  }
+  
+  .thead {
+    background-color: #eee;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .th {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .th button {
+    background-color: transparent;
+    border: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .th button:focus {
+    outline: none;
+  }
+  
+  .tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .text {
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .text:hover {
+    background-color: #f2f2f2;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  td:last-child {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+    
+    .tagsSelect {
+      font-size: 16px;
+      padding: 6px 12px;
+      margin-right: 10px;
+    }
+    
+    .th button {
+      font-size: 16px;
+    }
+    
+    td {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+</style>
