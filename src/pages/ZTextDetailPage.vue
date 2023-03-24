@@ -140,8 +140,13 @@
           },
 
           async deleteText() {
-            // 削除画面に遷移
-            this.$router.push(`/ztext/delete/${this.textId}`);
+            const response2 = await fetch(`/api/texts/${this.textId}`, {
+                method: "DELETE",
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              });
+              this.$router.push(`/ZAllText`);
           },
           formatDate (dateStr) {
                 const date = new Date(dateStr)

@@ -72,7 +72,7 @@
       }
     },
     async created() {
-      const userId = this.paramUserID; // User IDを取得
+      const userId = localStorage.getItem("user_id"); // User IDを取得
       try {
         const response = await axios.get(`/api/users/${userId}`)
         this.user = response.data
