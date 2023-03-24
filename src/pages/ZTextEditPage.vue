@@ -62,68 +62,114 @@ export default {
 </script>
 
 <style>
-  /* Reset default margin and padding */
-  * {
-    margin: 0;
-    padding: 0;
+.all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+label {
+  font-size: 20px;
+}
+
+.titleInput {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.textareaContent {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.tagDiv {
+  margin-bottom: 10px;
+}
+
+.inputText {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.submit {
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #006F8B;
+}
+
+@media (max-width: 768px) {
+  .all {
+    margin-top: 10px;
+    padding: 10px;
   }
-  
-  /* Set the background color of the page */
-  body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style the header */
+
   h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 24px;
-    text-align: center;
-    color: #1a73e8;
+    font-size: 24px;
   }
-  
-  /* Style the form */
-  .form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 32px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style the input and textarea fields */
-  input[type="text"], textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+
+  label {
     font-size: 16px;
-    margin-bottom: 16px;
   }
-  
-  /* Style the submit button */
-  .submit {
-    background-color: #1a73e8;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
+
+  .titleInput {
+    height: 30px;
+    margin-bottom: 10px;
     font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
   }
-  
-  /* Style the tags */
-  .tagDiv {
-    margin-bottom: 16px;
+
+  .textareaContent {
+    height: 200px;
+    margin-bottom: 10px;
+    font-size: 16px;
   }
-  
+
   .inputText {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    height: 30px;
     font-size: 16px;
   }
+
+  .submit {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
 </style>

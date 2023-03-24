@@ -47,54 +47,43 @@ const userName = ref(localStorage.getItem("name"));
 </template>
 
 <style module>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
 .container {
-  width: 100%;
-  max-width: 1280px;
-  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+  padding: 16px;
+  background-color: #1da1f2;
+  color: #fff;
 }
 
-.home, .zlogin, .ztextpost, .zalltext, .zuser {
-  text-decoration: none;
-  color: #000;
+.home {
+  color: #fff;
   font-weight: bold;
-  margin-right: 10px;
-  padding: 5px;
-  transition: all 0.3s ease;
 }
 
-.home:hover, .zlogin:hover, .ztextpost:hover, .zalltext:hover, .zuser:hover {
-  color: #1a73e8;
+.zlogin,
+.ztextpost,
+.zalltext,
+.zuser {
+  color: #fff;
+  font-weight: bold;
+}
+
+.zlogin:hover,
+.ztextpost:hover,
+.zalltext:hover,
+.zuser:hover {
+  text-decoration: underline;
 }
 
 .username {
-  margin-left: auto;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 14px;
+  margin-top: 8px;
+  color: #fff;
 }
 </style>

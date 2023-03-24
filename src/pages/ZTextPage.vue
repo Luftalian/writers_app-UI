@@ -79,155 +79,120 @@ const isLoggedIn = () => !!localStorage.getItem("user_id");
 
 <style>
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 50%;
+  padding-top: 50px;
 }
 
 h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #1a73e8;
   text-align: center;
-  margin-bottom: 30px;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #1DA1F2;
+}
+
+.big {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .label {
-  font-size: 20px;
-  color: #1a73e8;
-  margin-right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1DA1F2;
 }
 
 .title {
-  width: 100%;
-  font-size: 24px;
+  font-size: 18px;
   padding: 10px;
+  border: 1px solid #1DA1F2;
+  border-radius: 5px;
+}
+
+.content {
   margin-bottom: 20px;
-  border: none;
-  border-bottom: 2px solid #1a73e8;
 }
 
 .labelContent {
-  font-size: 20px;
-  color: #1a73e8;
-  margin-right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1DA1F2;
 }
 
 .textareaContent {
-  width: 100%;
-  height: 200px;
   font-size: 18px;
   padding: 10px;
+  border: 1px solid #1DA1F2;
+  border-radius: 5px;
+  height: 150px;
+}
+
+.abc {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
-  border: none;
-  border-bottom: 2px solid #1a73e8;
 }
 
 .tag {
-  font-size: 20px;
-  color: #1a73e8;
-  margin-right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1DA1F2;
 }
 
 .taginput {
-  width: 100%;
   font-size: 18px;
   padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  border-bottom: 2px solid #1a73e8;
+  border: 1px solid #1DA1F2;
+  border-radius: 5px;
+}
+
+.post {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .postButton {
-  display: block;
-  width: 200px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: #1a73e8;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.InputName {
-  width: 100%;
   font-size: 18px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  border-bottom: 2px solid #1a73e8;
-}
-
-.NameLabel {
-  font-size: 20px;
-  color: #1a73e8;
-  margin-right: 10px;
-}
-
-.LoginButton {
-  display: block;
-  width: 200px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: #1a73e8;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+  padding: 10px 20px;
+  background-color: #1DA1F2;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .else {
-  text-align: center;
-}
-
-.loginT {
   display: flex;
   flex-direction: column;
-}
-
-.big {
-  display: flex;
   align-items: center;
-  margin-bottom: 20px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+.NameLabel {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1DA1F2;
 }
 
-.abc {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+.InputName {
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #1DA1F2;
+  border-radius: 5px;
 }
 
-.post {
-text-align: center;
+.LoginButton {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #1DA1F2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
-
-.error {
-color: red;
-font-size: 16px;
-margin-top: 10px;
-}
-
-.success {
-color: green;
-font-size: 16px;
-margin-top: 10px;
-}
-
 </style>
