@@ -1,6 +1,6 @@
 # writers_app-UI
 
-"Post your thoughts and discover new ideas."
+### ***"Post your thoughts and discover new ideas."***
 
 ## リンク
 https://writersapp.trap.games
