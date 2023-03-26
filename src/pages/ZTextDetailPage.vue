@@ -47,7 +47,7 @@
     methods: {
           async loadText() {
               // APIからtextの詳細を取得
-              const response = await fetch(`/api/texts/${this.textId}`);
+              const response = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`);
               const data = await response.json();
               this.title = data.title;
               this.content = data.content;
@@ -62,7 +62,7 @@
           },
           async likeText() {
             // いいね！を送信
-            const response = await fetch(`/api/like`, {
+            const response = await fetch(`https://luftalian.trap.show/writersapp/like`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
@@ -74,7 +74,7 @@
             });
             if (response.ok) {
               // リクエストが成功した場合の処理
-              const response2 = await fetch(`/api/texts/${this.textId}`, {
+              const response2 = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json"
@@ -84,7 +84,7 @@
                 })
               });
               this.liked = true;
-              const response3 = await fetch(`/api/texts/${this.textId}`);
+              const response3 = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`);
               const data = await response3.json();
               this.goodCount = data.good_count;
             } else {
@@ -95,13 +95,13 @@
           },
           async loadTag() {
             // APIからtagの詳細を取得
-            const response = await fetch(`/api/tag/text/${this.textId}`);
+            const response = await fetch(`https://luftalian.trap.show/writersapp/tag/text/${this.textId}`);
             const data = await response.json();
             this.tags = data;
           },
           async unlikeText() {
             // いいね！を解除
-            const response = await fetch(`/api/like/delete`, {
+            const response = await fetch(`https://luftalian.trap.show/writersapp/like/delete`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
@@ -114,7 +114,7 @@
 
             if (response.ok) {
               // リクエストが成功した場合の処理
-              const response2 = await fetch(`/api/texts/${this.textId}`, {
+              const response2 = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json"
@@ -124,7 +124,7 @@
                 })
               });
               this.liked = false;
-              const response3 = await fetch(`/api/texts/${this.textId}`);
+              const response3 = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`);
               const data = await response3.json();
               this.goodCount = data.good_count;
             } else {
@@ -140,7 +140,7 @@
           },
 
           async deleteText() {
-            const response2 = await fetch(`/api/texts/${this.textId}`, {
+            const response2 = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`, {
                 method: "DELETE",
                 headers: {
                   "Content-Type": "application/json"
@@ -154,7 +154,7 @@
           },
           async loadLike() {
             // いいね！を解除
-            const response = await fetch(`/api/like/check`, {
+            const response = await fetch(`https://luftalian.trap.show/writersapp/like/check`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"

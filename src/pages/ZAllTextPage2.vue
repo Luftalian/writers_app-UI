@@ -49,7 +49,7 @@ import axios from 'axios'
     },
     methods: {
       getTexts () {
-        axios.get('/api/texts')
+        axios.get('https://luftalian.trap.show/writersapp/texts')
           .then(res => {
             this.texts = res.data
           })
@@ -58,7 +58,7 @@ import axios from 'axios'
           })
       },
       getTags () {
-        axios.get('/api/tag')
+        axios.get('https://luftalian.trap.show/writersapp/tag')
           .then(res => {
             this.tags = res.data
           })
@@ -68,7 +68,7 @@ import axios from 'axios'
       },
       getTaggedTexts () {
         if (this.selectedTag) {
-          axios.get(`/api/tag/name/${this.selectedTag}`)
+          axios.get(`https://luftalian.trap.show/writersapp/tag/name/${this.selectedTag}`)
             .then(res => {
               this.texts = res.data
             })

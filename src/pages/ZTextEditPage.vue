@@ -31,17 +31,17 @@ export default {
   methods: {
     async loadText() {
       // APIからtextの詳細を取得
-      const response = await fetch(`/api/texts/${this.textId}`);
+      const response = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`);
       const data = await response.json();
       this.title = data.title;
       this.content = data.content;
-      const response2 = await fetch(`/api/tag/text/${this.textId}`);
+      const response2 = await fetch(`https://luftalian.trap.show/writersapp/tag/text/${this.textId}`);
       const data2 = await response2.json();
       this.tags = data2;
     },
 
     async editText() {
-      const response = await fetch(`/api/texts/${this.textId}`, {
+      const response = await fetch(`https://luftalian.trap.show/writersapp/texts/${this.textId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

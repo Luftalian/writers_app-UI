@@ -6,7 +6,7 @@ const name = ref(localStorage.getItem("name") || "");
 const userId = ref(localStorage.getItem("user_id") || "");
 
 const login = () =>
-  axios.post("/api/users", {
+  axios.post("https://luftalian.trap.show/writersapp/users", {
     name: name.value,
   }).then(response => {
     userId.value = response.data.user_id;

@@ -74,21 +74,21 @@
     async created() {
       const userId = localStorage.getItem("user_id"); // User IDを取得
       try {
-        const response = await axios.get(`/api/users/${userId}`)
+        const response = await axios.get(`https://luftalian.trap.show/writersapp/users/${userId}`)
         this.user = response.data
       } catch (error) {
         console.error(error)
       }
       
       try {
-        const response = await axios.get(`/api/like/user/${userId}`)
+        const response = await axios.get(`https://luftalian.trap.show/writersapp/like/user/${userId}`)
         this.likedTexts = response.data        
       } catch (error) {
         console.error(error)
       }
       
       try {
-        const response = await axios.get(`/api/create/user/${userId}`);
+        const response = await axios.get(`https://luftalian.trap.show/writersapp/create/user/${userId}`);
         this.createdTexts = response.data
       } catch (error) {
         console.error(error)

@@ -1,0 +1,13 @@
+type: static
+
+work_dir: ./dist
+
+branch:
+  master:
+    startup: |
+      npm ci
+      npm install axios
+      npm run build
+
+https: on
+cname: "writersApp.trap.games"

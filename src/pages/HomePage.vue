@@ -6,7 +6,7 @@
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet risus finibus, consectetur magna sed, lobortis lorem. Vestibulum quis elit ac justo tristique commodo. Nullam in lorem vel massa rhoncus eleifend.</p>
         <hr class="my-4">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet risus finibus, consectetur magna sed, lobortis lorem. Vestibulum quis elit ac justo tristique commodo. Nullam in lorem vel massa rhoncus eleifend.</p>
-        <a class="btn btn-primary btn-lg" href="/ZLogin" role="button">Get started</a>
+        <router-link to="/ZLogin" class="btn btn-primary btn-lg">Get started</router-link>
       </div>
       <div class="col-sm-12 col-md-6">
         <img src="./images/post_thoughts.png" class="img-fluid rounded" alt="Post your thoughts">

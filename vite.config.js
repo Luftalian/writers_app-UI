@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "localhost:8080", //"https://luftalian.trap.show/writersapp/",
+        target: "localhost:8080", // npm run dev のときのみ有効
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/'),
       }

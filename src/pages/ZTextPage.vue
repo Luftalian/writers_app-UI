@@ -10,7 +10,7 @@ const userId = localStorage.getItem("user_id");
 const user_name = localStorage.getItem("name");
 
 const postText = async () => {
-  const response = await axios.post("/api/texts", {
+  const response = await axios.post("https://luftalian.trap.show/writersapp/texts", {
     title: title.value,
     content: content.value,
     user_id: userId,
@@ -19,13 +19,13 @@ const postText = async () => {
   const textId = response.data.text_id;
 
   // add tag
-  await axios.post("/api/tag", {
+  await axios.post("https://luftalian.trap.show/writersapp/tag", {
     tag_name: tag.value,
     text_id: textId,
   });
 
   // link user to text
-  await axios.post("/api/create", {
+  await axios.post("https://luftalian.trap.show/writersapp/create", {
     user_id: userId,
     text_id: textId,
   });
@@ -35,7 +35,7 @@ const postText = async () => {
 };
 
 const login = async () => {
-  const response = await axios.post("/api/users", {
+  const response = await axios.post("https://luftalian.trap.show/writersapp/users", {
     name: name.value,
   });
   localStorage.setItem("user_id", response.data.user_id);
